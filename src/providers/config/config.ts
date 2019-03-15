@@ -10,11 +10,19 @@ export class ConfigProvider {
     let perfil = {
       showSlide: false
     }
-
+    
     if(showSlide){
       perfil.showSlide = showSlide;
     }
 
     localStorage.setItem("config", JSON.stringify(perfil));
+  }
+  
+  getconfig():any{
+      return localStorage.getItem("config");
+  }
+
+  clearconfig(){
+    localStorage.clear();
   }
 }
