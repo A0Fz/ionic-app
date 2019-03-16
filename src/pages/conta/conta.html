@@ -1,0 +1,39 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Conta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Estado</ion-label>
+        <ion-input type="text" autofocus [(ngModel)]="txtEstado"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cidade</ion-label>
+        <ion-input type="text" [(ngModel)]="txtCidade"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Logradouro</ion-label>
+        <ion-input type="text" [(ngModel)]="txtLogradouro"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button (click)="exibeInput()" ion-button color="primary" block>Buscar</button>
+    </div>
+
+    <ion-item>
+      <ion-label>Lembrar Senha</ion-label>
+      <ion-checkbox color="primary" checked="true"></ion-checkbox>
+    </ion-item>
+
+
+</ion-content>

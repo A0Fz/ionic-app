@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharePage } from '../pages/share/share';
 import { SlidePage } from '../pages/slide/slide';
 import { ConfigProvider } from '../providers/config/config';
+import { ContaPage } from '../pages/conta/conta';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConfigProvider } from '../providers/config/config';
     HomePage,
     TabsPage,
     SharePage,
-    SlidePage
+    SlidePage,
+    ContaPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { ConfigProvider } from '../providers/config/config';
     HomePage,
     TabsPage,
     SharePage,
-    SlidePage
+    SlidePage,
+    ContaPage
   ],
   providers: [
     StatusBar,

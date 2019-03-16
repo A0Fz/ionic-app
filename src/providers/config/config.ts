@@ -18,7 +18,7 @@ export class ConfigProvider {
     localStorage.setItem("config", JSON.stringify(perfil));
   }
   
-  getconfig():any{
+  getConfig():any{
       return localStorage.getItem("config");
   }
 
