@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ViacepProvider} from '../../providers/viacep/viacep';
 
 @IonicPage()
 @Component({
@@ -8,20 +8,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'conta.html',
 })
 export class ContaPage {
-  txtCidade:string;
-  txtEstado:string;
-  txtLogradouro:string;
-  constructor() {}
+  private cep;
+	private endereco:any = {};
+	vazio = "";
 
-  
+  constructor(public navCtrl: NavController, private viacep: ViacepProvider) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ContaPage');
+	getEndereco(){
+		this.viacep.callService(this.cep)
+		.subscribe(
+        data =>{
+		this.endereco = data;
+		console.log(data);
+        }
+      );
+    }
   }
-
-  exibeInput(){
-    console.log(`Cidade ${this.txtCidade}\nEstado ${this.txtEstado}\nLogradouro ${this.txtLogradouro} `)
-  }
-
-}
 

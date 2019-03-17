@@ -1,39 +1,53 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>Conta</ion-title>
+    <ion-title>CEP</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
 
-    <ion-list>
-
-      <ion-item>
-        <ion-label floating>Estado</ion-label>
-        <ion-input type="text" autofocus [(ngModel)]="txtEstado"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Cidade</ion-label>
-        <ion-input type="text" [(ngModel)]="txtCidade"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Logradouro</ion-label>
-        <ion-input type="text" [(ngModel)]="txtLogradouro"></ion-input>
-      </ion-item>
-
-    </ion-list>
-
-    <div padding>
-      <button (click)="exibeInput()" ion-button color="primary" block>Buscar</button>
-    </div>
-
-    <ion-item>
-      <ion-label>Lembrar Senha</ion-label>
-      <ion-checkbox color="primary" checked="true"></ion-checkbox>
-    </ion-item>
-
+    <h4>Digite seu CEP: </h4>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-searchbar type="tel" [(ngModel)]="cep"
+          (ionInput)="getEndereco()"></ion-searchbar>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+          <ion-list >
+              <ion-item *ngIf="endereco.logradouro">
+                  Logradouro:<br> {{ endereco.logradouro}}
+                </ion-item >
+                <ion-item *ngIf="endereco.complemento">
+                  Complemento:<br> {{ endereco.complemento}}
+                </ion-item >
+                <ion-item *ngIf="endereco.bairro">
+                  Bairro:<br> {{ endereco.bairro }}
+                </ion-item >
+                <ion-item *ngIf="endereco.localidade">
+                  Cidade:<br> {{ endereco.localidade }}
+                </ion-item>
+                <ion-item *ngIf="endereco.uf">
+                  UF:<br> {{ endereco.uf}}
+                </ion-item >
+                <ion-item *ngIf="endereco.unidade">
+                  Unidade:<br> {{ endereco.unidade }}
+                </ion-item>
+                <ion-item *ngIf="endereco.ibge">
+                  IBGE:<br> {{ endereco.ibge }}
+                </ion-item>
+                <ion-item *ngIf="endereco.gia">
+                  GIA:<br> {{ endereco.gia }}
+                </ion-item>
+          </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>   
 
 </ion-content>
+
+ 
+ 

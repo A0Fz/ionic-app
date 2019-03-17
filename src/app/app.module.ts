@@ -14,6 +14,8 @@ import { SharePage } from '../pages/share/share';
 import { SlidePage } from '../pages/slide/slide';
 import { ConfigProvider } from '../providers/config/config';
 import { ContaPage } from '../pages/conta/conta';
+import { ViacepProvider } from '../providers/viacep/viacep';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,12 @@ import { ContaPage } from '../pages/conta/conta';
     TabsPage,
     SharePage,
     SlidePage,
-    ContaPage
+    ContaPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,7 +48,8 @@ import { ContaPage } from '../pages/conta/conta';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConfigProvider
+    ConfigProvider,
+    ViacepProvider
   ]
 })
 export class AppModule {}
